@@ -31,6 +31,23 @@ namespace main
             suffix = "III";
 
             Console.WriteLine("Name: " + fname + " " + mname + " / " + mnamesingle + " " + lnmae + " " + suffix);
+
+            string str;
+            Console.Write("Write any: ");
+            str = Console.ReadLine();
+            Console.WriteLine("You write: "+str);
+
+            char ptr;
+            Console.Write("Enter 1  Letter: ");
+            ptr = (char) Console.Read();
+            Console.WriteLine("The Letter is "+ptr);
+
+            char vty;
+            Console.WriteLine("ENTER a Letter/Num");
+            vty = Console.ReadKey().KeyChar;
+            Console.WriteLine("\nlets delay");
+            Console.ReadKey();
+            Console.WriteLine("Its delayed");
         }
     }
 }
