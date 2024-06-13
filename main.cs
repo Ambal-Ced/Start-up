@@ -106,6 +106,40 @@ namespace main
             Console.WriteLine(nasd + nssd);
             //end here
 
+            string nums1, nums2, eq = null;
+
+            nums1 = Console.ReadLine();
+            nums2 = Console.ReadLine();
+            Console.WriteLine(nums1 + nums2);
+            //Conver.ToInt32 = int, Convert.ToInt64 = long, Convert.ToSingle = float Convert.ToString = string
+            string x = "15.234";
+            string y = "2";
+            string z = "1712736";
+            int x2 = Convert.ToInt32(y);
+            long x3 = Convert.ToInt64(z);
+            float x4 = Convert.ToSingle(x);
+            double x5 = Convert.ToDouble(x);
+
+            Console.WriteLine(x2);
+            Console.WriteLine(x3);
+            Console.WriteLine(x4);
+            Console.WriteLine(x5);
+
+            string i = "10";
+            string b = "10";
+
+            int n = Convert.ToInt32(i);
+            int m = Convert.ToInt32(b);
+
+            int j = n + m;
+
+            Console.WriteLine(j);
+            Console.WriteLine("hello\tworlds???");
+            Console.WriteLine("hello\nbro");
+            Console.WriteLine(@"meta       bored     hehe");
+            Console.WriteLine("\u3053\u3093\u306B\u3061\u306F World!");
+            Console.WriteLine("\u0048\u0045\u004C\u004C\u004F \u0057\u004F\u0052\u004C\u0044");
+            Console.Write("\n\n\u65e5\u672c\u306e\u8acb\u6c42\u66f8\u3092\u751f\u6210\u3059\u308b\u306b\u306f\uff1a\n\t");
         }
     }
 
