@@ -11,8 +11,8 @@ namespace main
             long long_int = 203203827;
             double decimal_15 = 20.112356734521111;
             float avenum = 6.7f;
-            string fname = "First",
-                mname = "Middle",
+            string fname ="First", 
+                mname = "Middle", 
                 lnmae = "last",
                 suffix;
             char mnamesingle = 'M';
@@ -47,12 +47,12 @@ namespace main
             string str;
             Console.Write("Write any: ");
             str = Console.ReadLine();
-            Console.WriteLine("You write: " + str);
+            Console.WriteLine("You write: "+str);
 
             char ptr;
             Console.Write("Enter 1  Letter: ");
-            ptr = (char)Console.Read();
-            Console.WriteLine("The Letter is " + ptr);
+            ptr = (char) Console.Read();
+            Console.WriteLine("The Letter is "+ptr);
 
             char vty;
             Console.WriteLine("ENTER a Letter/Num");
@@ -69,11 +69,11 @@ namespace main
             long lng = rndnum;
             float fltnum = lng;
             double dblnum = fltnum;
-            Console.WriteLine("Character: " + chrn +
+            Console.WriteLine("Character: "+chrn +
                 "\nInteger of the char: " + rndnum +
                 "\nlong: " + lng +
-                "\nfloat: " + fltnum +
-                "\ndouble: " + dblnum);
+                "\nfloat: " +  fltnum +
+                "\ndouble: "+ dblnum);
 
             //double->float->long->int->char (big to small)
             //can directly convert double to char
@@ -90,14 +90,103 @@ namespace main
                    "\nInteger of the char: " + ins +
                    "\nCharacter: " + ch);
             //arithmetic
-            int num1 = 10, num2 = 10;
-            Console.Write("Adittion: ");
-            Console.WriteLine(num1 + num2);
-            Console.WriteLine("Division: " + num1 / num2);
-            Console.Write("Subtraction: ");
-            Console.WriteLine(num1 - num2);
-            Console.WriteLine("Multiplication: " + num1 * num2);
-            Console.ReadKey();
+            int sum = 7 + 5;
+            int difference = 7 - 5;
+            int product = 7 * 5;
+            int quotient = 7 / 5;
+
+            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Difference: " + difference);
+            Console.WriteLine("Product: " + product);
+            Console.WriteLine("Quotient: " + quotient);
+
+            decimal decimalQuotient = 7.0m / 5;
+            Console.WriteLine($"Decimal quotient: {decimalQuotient}");
+
+            //best way to do arithmetic is to add or use a decimal on the num
+            int first = 7;
+            int second = 19273;
+            decimal quotientt = (decimal)first / (decimal)second;
+            Console.WriteLine(quotient);
+
+            decimal tr = 9m;
+            decimal sse = 1.8m;
+            decimal quo = (decimal)tr / (decimal)sse;
+            Console.WriteLine(quotient);
+
+            decimal a1 = 2m, a2 = 3.5m;
+
+            Console.WriteLine($"Modulus of 7 & 5 : {7 % 5}");
+            Console.WriteLine($"Multiplication of 7 & 5 : {7 * 5}");
+            Console.WriteLine($"Division of 7 & 5 : {7 / 5}");
+            Console.WriteLine($"Subtraction of 7 & 5 : {7 - 5}");
+            Console.WriteLine($"(Negative)Subtraction of 5 & 7 : {5 - 7}");
+            Console.WriteLine($"Addition of 7 & 5 : {7 + 5}");
+            Console.WriteLine($"Addition of two decimal : {a1 + a2}");
+            Console.WriteLine($"Addition of two decimal : {a1 - a2}");
+            Console.WriteLine($"Addition of two decimal : {a1 / a2}");
+            Console.WriteLine($"Addition of two decimal : {a1 * a2}");
+
+            int value1 = 3 + 4 * 5;
+            int value2 = (3 + 4) * 5;
+            int value3 = 3 + (4 * 5);
+            Console.WriteLine(value1);
+            Console.WriteLine(value2);
+            Console.WriteLine(value3);
+
+            int value = 0;     // value is now 0.
+            Console.WriteLine(value);
+            value = value + 5; // value is now 5.
+            Console.WriteLine(value);
+            value += 5;        // value is now 10.
+            Console.WriteLine(value);
+
+            value = 0;     // value is now 0.
+            Console.WriteLine(value);
+            value = value + 1; // value is now 1.
+            Console.WriteLine(value);
+            value++;           // value is now 2.
+            Console.WriteLine(value);
+
+            value = 5;
+            Console.WriteLine(value);
+            value++;
+            Console.WriteLine(value);
+
+            //+=, -=, *=, ++, and -- 
+            value = 1;
+
+            value = value + 1;
+            Console.WriteLine("First increment: " + value);
+
+            value += 1;
+            Console.WriteLine("Second increment: " + value);
+
+            value++;
+            Console.WriteLine("Third increment: " + value);
+
+            value = value - 1;
+            Console.WriteLine("First decrement: " + value);
+
+            value -= 1;
+            Console.WriteLine("Second decrement: " + value);
+
+            value--;
+            Console.WriteLine("Third decrement: " + value);
+
+            value = 1;
+            value++;
+            Console.WriteLine("First: " + value);
+            Console.WriteLine($"Second: {value++}");
+            Console.WriteLine("Third: " + value);
+            Console.WriteLine("Fourth: " + (++value));
+
+            int fahrenheit = 94;
+
+            decimal celcius = ((decimal)fahrenheit - 32) * 5 / 9;
+
+            Console.WriteLine(celcius);
+
 
             //might be useful somewhere
             string nasd = Console.ReadLine();
@@ -115,10 +204,10 @@ namespace main
             string x = "15.234";
             string y = "2";
             string z = "1712736";
-            int x2 = Convert.ToInt32(y);
-            long x3 = Convert.ToInt64(z);
-            float x4 = Convert.ToSingle(x);
-            double x5 = Convert.ToDouble(x);
+            int x2 = Convert.ToInt32 (y);
+            long x3 = Convert.ToInt64 (z);
+            float x4 = Convert.ToSingle (x);
+            double x5 = Convert.ToDouble (x);
 
             Console.WriteLine(x2);
             Console.WriteLine(x3);
@@ -140,11 +229,12 @@ namespace main
             Console.WriteLine("\u3053\u3093\u306B\u3061\u306F World!");
             Console.WriteLine("\u0048\u0045\u004C\u004C\u004F \u0057\u004F\u0052\u004C\u0044");
             Console.Write("\n\n\u65e5\u672c\u306e\u8acb\u6c42\u66f8\u3092\u751f\u6210\u3059\u308b\u306b\u306f\uff1a\n\t");
+            int firstNumber = 12;
+            int secondNumber = 7;
+            Console.WriteLine(firstNumber + secondNumber);
+            Console.WriteLine(7 + secondNumber);
+            Console.WriteLine("??" + 7 + secondNumber);
+            Console.WriteLine("??" + (7 + secondNumber));
         }
     }
-
-
-
-
-
 }
