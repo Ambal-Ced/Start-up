@@ -1591,7 +1591,119 @@ namespace Start__up
             //     mySentence = myString.Trim();
             //     Console.WriteLine(mySentence);
             // }
+            /////////
+            //Activity that uses array, for loop, do-while, if and case switch
+            // string[] petID = {"1", "2", "3", "4", "5", "", "", ""};
+            // string[] petSpecies = {"Cat", "Dog", "Cat", "Cat", "Dog", "", "", ""};
+            // string[] petAge = {"1", "1", "2", "2", "1", "", "", ""};
+            // string[] petdescriptionCondition = {"One leg is broken", "Small Tail", "Tiny", "One eye blind", "Lost 2 teeths", "", "", ""};
+            // string[] petPersonality ={"Playful", "Shy", "Afraid", "Playful", "Playful", "", "", ""};
+            // string[] petNickname = {"chiz", "bell", "timmy", "lim","ban", "", "", ""};
+
+
+            // string? choice = "";
+            // int i = 0;
+            // do{
+            // Console.WriteLine("\nWelcome to the Contoso PetFriends app. Your main menu options are: \n1. List all of our current pet information \n2. Add a new animal friend to the ourAnimals array \n3. Ensure animal ages and physical descriptions are complete \n4. Ensure animal nicknames and personality descriptions are complete \n5. Edit an animal's age \n6. Edit an animal's personality description \n7. Display all cats with a specified characteristic \n8. Display all dogs with a specified characteristic \n\nEnter your selection number (or type Exit to exit the program)\n\n");
+            // Console.Write(">>> ");
+            // choice = Console.ReadLine();
+            // int arrayNum = 0;
+            //     switch(choice){
+            //         case "1":
+            //         for (i = 0; i < petID.Length; i ++){
+            //             arrayNum = i;
+            //             if (petID[i] != ""){
+            //         Console.WriteLine($"Pet Id is {petID[arrayNum]} name is {petNickname[arrayNum]} he/she is a {petAge[arrayNum]} years old {petSpecies[arrayNum]} with a condition of {petdescriptionCondition[arrayNum]} and have a {petPersonality[arrayNum]} personality");
+            //             }
+            //         }Console.ReadKey();
+            //         break;
+
+            //         case "2":
+            //         int empty = 0;
+            //         int newid = 0;
+            //         for (i = 0;i <= petID.Length; i++){
+            //             if(petID[i] == ""){
+            //                 i++;
+            //                 empty = i;
+            //                 string data;
+            //                 Console.WriteLine("the new id is "+i);
+            //                 Console.WriteLine("the new id is "+empty);
+
+            //                 string newId = Convert.ToString(empty);
+            //                 petID[empty] = newId;
+            //                 Console.Write("Enter Pet Nickname: ");
+            //                 data = Console.ReadLine();
+            //                 petNickname[empty] = data;
+
+            //                 Console.Write("Enter Pet Species: ");
+            //                 data = Console.ReadLine();
+            //                 petSpecies[empty] = data;
+
+            //                 Console.Write("Enter Pet Age: ");
+            //                 data = Console.ReadLine();
+            //                 petAge[empty] = data;
+
+            //                 Console.Write("Enter Pet Description Condition: ");
+            //                 data = Console.ReadLine();
+            //                 petdescriptionCondition[empty] = data;
+
+            //                 Console.Write("Enter Pet Personality: ");
+            //                 data = Console.ReadLine();
+            //                 petPersonality[empty] = data;
+
+            //                 break;
+
+            //             }
+
+
+            //         }
+
+            //         break;
+            //         case "3":
+
+            //         Console.WriteLine("Function not available");
+            //         break;
+            //         case "4":
+
+            //         Console.WriteLine("Function not available");
+            //         break;
+            //         case "5":
+
+            //         Console.WriteLine("Function not available");
+            //         break;
+            //         case "6":
+
+            //         Console.WriteLine("Function not available");
+            //         break;
+            //         case "7":
+            //         for (i = 0; i < petSpecies.Length; i++){
+            //             string Species = petSpecies[i];
+            //             if (Species == "Dog"){
+            //                 Console.WriteLine($"Pet Id is {petID[arrayNum]} name is {petNickname[arrayNum]} he/she is a {petAge[arrayNum]} years old {petSpecies[arrayNum]} with a condition of {petdescriptionCondition[arrayNum]} and have a {petPersonality[arrayNum]} personality");
+            //             }
+
+            //         }Console.ReadKey();
+            //         break;
+            //         case "8":
+            //         for (i = 0; i < petSpecies.Length;i++){
+            //             string Species = petSpecies[i];
+            //             if (Species == "Cat"){
+            //                 Console.WriteLine($"Pet Id is {petID[arrayNum]} name is {petNickname[arrayNum]} he/she is a {petAge[arrayNum]} years old {petSpecies[arrayNum]} with a condition of {petdescriptionCondition[arrayNum]} and have a {petPersonality[arrayNum]} personality");
+            //             }
+
+            //         }
+            //         Console.ReadKey();
+            //         break;
+            //         default:
+            //         arrayNum = 0;
+            //         break;
+
+            //     }
+
+            // }while(choice != "exit");
 
         }
     }
+}
+
 }
