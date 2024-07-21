@@ -1593,7 +1593,9 @@ namespace Start__up
             // }
             /////////
             //Activity that uses array, for loop, do-while, if and case switch
-            // string[] petID = {"1", "2", "3", "4", "5", "", "", ""};
+            //activity addded new function
+
+            // string[] petID = {"1", "2", "3", "4", "5", "", "7", ""};
             // string[] petSpecies = {"Cat", "Dog", "Cat", "Cat", "Dog", "", "", ""};
             // string[] petAge = {"1", "1", "2", "2", "1", "", "", ""};
             // string[] petdescriptionCondition = {"One leg is broken", "Small Tail", "Tiny", "One eye blind", "Lost 2 teeths", "", "", ""};
@@ -1612,7 +1614,7 @@ namespace Start__up
             //         case "1":
             //         for (i = 0; i < petID.Length; i ++){
             //             arrayNum = i;
-            //             if (petID[i] != ""){
+            //             if (petID[i] != "" && petNickname[i] != "" && petSpecies[i] != "" && petAge[i] != "" && petPersonality[i] != "" && petSpecies[i] !=""){
             //         Console.WriteLine($"Pet Id is {petID[arrayNum]} name is {petNickname[arrayNum]} he/she is a {petAge[arrayNum]} years old {petSpecies[arrayNum]} with a condition of {petdescriptionCondition[arrayNum]} and have a {petPersonality[arrayNum]} personality");
             //             }
             //         }Console.ReadKey();
@@ -1626,8 +1628,6 @@ namespace Start__up
             //                 i++;
             //                 empty = i;
             //                 string data;
-            //                 Console.WriteLine("the new id is "+i);
-            //                 Console.WriteLine("the new id is "+empty);
 
             //                 string newId = Convert.ToString(empty);
             //                 petID[empty] = newId;
@@ -1660,12 +1660,106 @@ namespace Start__up
 
             //         break;
             //         case "3":
+            //         int j= 0;
+            //         int k = 0;
+            //             for(i=0;i<=petID.Length;i++){
 
-            //         Console.WriteLine("Function not available");
+            //                 if(petID[i] != ""){
+            //                     if(petAge[i] == "" && petdescriptionCondition[i] != ""){
+            //                         Console.WriteLine($"Pet Id is {petID[i]} name is {petNickname[i]} is missing age");
+            //                         Console.WriteLine("Add age");
+            //                         Console.Write("Enter Age: ");
+            //                         string age = Console.ReadLine();
+            //                         petAge[i] = age;
+            //                         break;
+            //                     }
+            //                     else if(petAge[i] != "" && petdescriptionCondition[i] == ""){
+            //                         Console.WriteLine($"Pet Id is {petID[i]} name is {petNickname[i]} is missing description");
+            //                         Console.WriteLine("Add s");
+            //                         Console.Write("Enter physical description: ");
+            //                         string description = Console.ReadLine();
+            //                         petdescriptionCondition[i] = description;
+            //                         break;
+            //                     }
+            //                     else if(petAge[i] == "" && petdescriptionCondition[i] == ""){
+
+            //                         Console.WriteLine($"Pet Id is {petID[i]} name is {petNickname[i]} is missing age or description");
+
+            //                         Console.WriteLine($"Add age and physical descriptions");
+            //                         Console.Write("Enter Age: ");
+            //                         string age = Console.ReadLine();
+            //                         Console.Write("Enter physical description: ");
+            //                         string description = Console.ReadLine();
+            //                         petAge[i] = age;
+            //                         petdescriptionCondition[i] = description;
+            //                         break;
+            //                     }
+            //                 }
+
+            //                 if(petID[i] == "" || petID[i] != ""){  
+            //                     j = j+1;
+            //                     k = i;
+            //                     int l = petID.Length;
+            //                     if(j == l){
+            //                         Console.WriteLine("All Pet Data is Complete");
+            //                         Console.Read();
+            //                         break;
+            //                     }
+            //                 }
+
+            //             }
+
             //         break;
             //         case "4":
+            //         j= 0;
+            //         k = 0;
+            //             for(i=0;i<=petID.Length;i++){
 
-            //         Console.WriteLine("Function not available");
+            //                 if(petID[i] != ""){
+            //                     if(petNickname[i] == "" && petPersonality[i] != ""){
+            //                         Console.WriteLine($"Pet Id is {petID[i]} is missing nickname");
+            //                         Console.WriteLine("Add nickname");
+            //                         Console.Write("Enter nickname: ");
+            //                         string age = Console.ReadLine();
+            //                         petNickname[i] = age;
+            //                         break;
+            //                     }
+            //                     else if(petNickname[i] != "" && petPersonality[i] == ""){
+            //                         Console.WriteLine($"Pet Id is {petID[i]} name is {petNickname[i]} is missing personality description");
+            //                         Console.WriteLine("Add personality");
+            //                         Console.Write("Enter personality description: ");
+            //                         string description = Console.ReadLine();
+            //                         petPersonality[i] = description;
+            //                         break;
+            //                     }
+            //                     else if(petNickname[i] == "" && petPersonality[i] == ""){
+
+            //                         Console.WriteLine($"Pet Id is {petID[i]} is missing nickname and personality description");
+
+            //                         Console.WriteLine($"Add age and physical descriptions");
+            //                         Console.Write("Enter Nickname: ");
+            //                         string age = Console.ReadLine();
+            //                         Console.Write("Enter personality description: ");
+            //                         string description = Console.ReadLine();
+            //                         petNickname[i] = age;
+            //                         petPersonality[i] = description;
+            //                         break;
+            //                     }
+            //                 }
+
+            //                 if(petID[i] == "" || petID[i] != ""){  
+            //                     j = j+1;
+            //                     k = i;
+            //                     int l = petID.Length;
+            //                     if(j == l){
+            //                         Console.WriteLine("All Pet Data is Complete");
+            //                         Console.Read();
+            //                         break;
+            //                     }
+            //                 }
+
+            //             }
+
             //         break;
             //         case "5":
 
@@ -1677,9 +1771,11 @@ namespace Start__up
             //         break;
             //         case "7":
             //         for (i = 0; i < petSpecies.Length; i++){
-            //             string Species = petSpecies[i];
+            //             string Species = Convert.ToString(petSpecies[i]);
             //             if (Species == "Dog"){
             //                 Console.WriteLine($"Pet Id is {petID[arrayNum]} name is {petNickname[arrayNum]} he/she is a {petAge[arrayNum]} years old {petSpecies[arrayNum]} with a condition of {petdescriptionCondition[arrayNum]} and have a {petPersonality[arrayNum]} personality");
+
+
             //             }
 
             //         }Console.ReadKey();
@@ -1701,6 +1797,51 @@ namespace Start__up
             //     }
 
             // }while(choice != "exit");
+
+            // Console.WriteLine("Signed integral types:");
+
+            // Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
+            // Console.WriteLine($"short  : {short.MinValue} to {short.MaxValue}");
+            // Console.WriteLine($"int    : {int.MinValue} to {int.MaxValue}");
+            // Console.WriteLine($"long   : {long.MinValue} to {long.MaxValue}\n");
+
+            // Console.WriteLine("Signed integral types:");
+
+            // Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
+            // Console.WriteLine($"short  : {short.MinValue} to {short.MaxValue}");
+            // Console.WriteLine($"int    : {int.MinValue} to {int.MaxValue}");
+            // Console.WriteLine($"long   : {long.MinValue} to {long.MaxValue}");
+
+            // Console.WriteLine("");
+            // Console.WriteLine("Floating point types:");
+            // Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
+            // Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
+            // Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
+
+            // int[] data = new int[3];
+
+            // string shortenedString = "Hello World!";
+            // Console.WriteLine(shortenedString);
+
+            // int val_A = 2;
+            // int val_B = val_A;
+            // val_B = 5;
+
+            // Console.WriteLine("--Value Types--");
+            // Console.WriteLine($"val_A: {val_A}");
+            // Console.WriteLine($"val_B: {val_B}");
+
+            // Console.WriteLine("");
+            // int[] ref_A= new int[1];
+            // ref_A[0] = 2;
+            // int[] ref_B = ref_A;
+            // ref_B[0] = 5;
+
+            // Console.WriteLine("--Reference Types--");
+            // Console.WriteLine($"ref_A[0]: {ref_A[0]}");
+            // Console.WriteLine($"ref_B[0]: {ref_B[0]}");
+
+
 
         }
     }
