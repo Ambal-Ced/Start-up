@@ -2419,7 +2419,9 @@ namespace Start__up
             // Console.WriteLine(quantity);
             // Console.WriteLine(output);
 
-            // #1 the ourAnimals array will store the following: 
+            // Final
+
+            // // ourAnimals array will store the following: 
             // string animalSpecies = "";
             // string animalID = "";
             // string animalAge = "";
@@ -2428,16 +2430,16 @@ namespace Start__up
             // string animalNickname = "";
             // string suggestedDonation = "";
 
-            // // #2 variables that support data entry
+            // // variables that support data entry
             // int maxPets = 8;
             // string? readResult;
             // string menuSelection = "";
             // decimal decimalDonation = 0.00m;
 
-            // // #3 array used to store runtime data, there is no persisted data
+            // // array used to store runtime data
             // string[,] ourAnimals = new string[maxPets, 7];
 
-            // // #4 create sample data ourAnimals array entries
+            // // sample data ourAnimals array entries
             // for (int i = 0; i < maxPets; i++)
             // {
             //     switch (i)
@@ -2475,11 +2477,12 @@ namespace Start__up
             //         case 3:
             //             animalSpecies = "cat";
             //             animalID = "c4";
-            //             animalAge = "3";
-            //             animalPhysicalDescription = "Medium sized, long hair, yellow, female, about 10 pounds. Uses litter box.";
-            //             animalPersonalityDescription = "A people loving cat that likes to sit on your lap.";
-            //             animalNickname = "Lion";
+            //             animalAge = "";
+            //             animalPhysicalDescription = "";
+            //             animalPersonalityDescription = "";
+            //             animalNickname = "lion";
             //             suggestedDonation = "";
+
             //             break;
 
             //         default:
@@ -2491,7 +2494,6 @@ namespace Start__up
             //             animalNickname = "";
             //             suggestedDonation = "";
             //             break;
-
             //     }
 
             //     ourAnimals[i, 0] = "ID #: " + animalID;
@@ -2500,14 +2502,15 @@ namespace Start__up
             //     ourAnimals[i, 3] = "Nickname: " + animalNickname;
             //     ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
             //     ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
-            //     ourAnimals[i, 6] = "Suggested Donation: "  + suggestedDonation;
 
-            //     if (!decimal.TryParse(suggestedDonation, out decimalDonation)){
-            //     decimalDonation = 45.00m; // if suggestedDonation NOT a number, default to 45.00
-            //     }ourAnimals[i, 6] = $"Suggested Donation: {decimalDonation:C2}";
+            //     if (!decimal.TryParse(suggestedDonation, out decimalDonation))
+            //     {
+            //         decimalDonation = 45.00m; // if suggestedDonation NOT a number, default to 45.00
+            //     }
+            //     ourAnimals[i, 6] = $"Suggested Donation: {decimalDonation:C2}";
             // }
 
-            // // #5 display the top-level menu options
+            // // top-level menu options
             // do
             // {
             //     // NOTE: the Console.Clear method is throwing an exception in debug sessions
@@ -2520,12 +2523,13 @@ namespace Start__up
             //     Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
 
             //     readResult = Console.ReadLine();
+
             //     if (readResult != null)
             //     {
             //         menuSelection = readResult.ToLower();
             //     }
 
-            //     // use switch-case to process the selected menu option
+            //     // switch-case to process the selected menu option
             //     switch (menuSelection)
             //     {
             //         case "1":
@@ -2535,61 +2539,115 @@ namespace Start__up
             //                 if (ourAnimals[i, 0] != "ID #: ")
             //                 {
             //                     Console.WriteLine();
+
             //                     for (int j = 0; j < 7; j++)
             //                     {
-            //                         Console.WriteLine(ourAnimals[i, j]);
+            //                         Console.WriteLine(ourAnimals[i, j].ToString());
             //                     }
             //                 }
             //             }
-            //             Console.WriteLine("\n\rPress the Enter key to continue");
+
+            //             Console.WriteLine("\r\nPress the Enter key to continue");
             //             readResult = Console.ReadLine();
 
             //             break;
 
             //         case "2":
-            //             // Display all dogs with a specified characteristic
-            //             string dogCharacteristic = "";
+            //             // #1 Display all dogs with a multiple search characteristics
 
-            //             while (dogCharacteristic == "")
+            //             string dogCharacteristics = "";
+
+            //             while (dogCharacteristics == "")
             //             {
-            //                 // have the user enter physical characteristics to search for
-            //                 Console.WriteLine($"\nEnter one desired dog characteristics to search for");
+            //                 // #2 have user enter multiple comma separated characteristics to search for
+            //                 Console.WriteLine($"\nEnter dog characteristics to search for separated by commas");
             //                 readResult = Console.ReadLine();
+
             //                 if (readResult != null)
             //                 {
-            //                     dogCharacteristic = readResult.ToLower().Trim();
+            //                     dogCharacteristics = readResult.ToLower();
+            //                     Console.WriteLine();
             //                 }
             //             }
+
+            //             string[] dogSearches = dogCharacteristics.Split(",");
+            //             // trim leading and trailing spaces from each search term
+            //             for (int i = 0; i < dogSearches.Length; i++)
+            //             {
+            //                 dogSearches[i] = dogSearches[i].Trim();
+            //             }
+
+            //             Array.Sort(dogSearches);
+            //             // #4 update to "rotating" animation with countdown
+            //             string[] searchingIcons = {" |", " /", "--", " \\", " *"};
+
+            //             bool matchesAnyDog = false;
             //             string dogDescription = "";
-            //             bool noMatchesDog = true;
-            //              // #6 loop through the ourAnimals array to search for matching animals
-            //                 for (int i = 0; i < maxPets; i++)
+
+            //             // loops through the ourAnimals array to search for matching animals
+            //             for (int i = 0; i < maxPets; i++)
+            //             {
+            //                 if (ourAnimals[i, 1].Contains("dog"))
             //                 {
-            //                     if (ourAnimals[i, 1].Contains("dog"))
+
+            //                     // Search combined descriptions and report results
+            //                     dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+            //                     bool matchesCurrentDog = false;
+
+            //                     foreach (string term in dogSearches)
             //                     {
-            //                         dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
-            //                     // #7 Search combined descriptions and report results
-            //                         if (dogDescription.Contains(dogCharacteristic))
+            //                         // only search if there is a term to search for
+            //                         if (term != null && term.Trim() != "")
             //                         {
-            //                             Console.WriteLine($"\nOur dog {ourAnimals[i, 3]} is a match!");
-            //                             Console.WriteLine(dogDescription);
-            //                             noMatchesDog = false;
+            //                             for (int j = 2; j > -1 ; j--)
+            //                             {
+            //                                 // #5 update "searching" message to show countdown
+            //                                 foreach (string icon in searchingIcons)
+            //                                 {
+            //                                     Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {term.Trim()} {icon} {j.ToString()}");
+            //                                     Thread.Sleep(100);
+            //                                 }
+
+            //                                 Console.Write($"\r{new String(' ', Console.BufferWidth)}");
+            //                             }
+
+            //                             // #3a iterate submitted characteristic terms and search description for each term
+            //                             if (dogDescription.Contains(" " + term.Trim() + " "))
+            //                             {
+            //                                 // #3b update message to reflect current search term match 
+
+            //                                 Console.WriteLine($"\rOur dog {ourAnimals[i, 3]} matches your search for {term.Trim()}");
+
+            //                                 matchesCurrentDog = true;
+            //                                 matchesAnyDog = true;
+            //                             }
             //                         }
             //                     }
+
+            //                     // #3d if the current dog is match, display the dog's info
+            //                     if (matchesCurrentDog)
+            //                     {
+            //                         Console.WriteLine($"\r{ourAnimals[i, 3]} ({ourAnimals[i, 0]})\n{dogDescription}\n");
+            //                     }
             //                 }
-            //                 if (noMatchesDog)
-            //                 {
-            //                     Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristic);
-            //                 }
-            //             Console.WriteLine("Press the Enter key to continue.");
+            //             }
+
+            //             if (!matchesAnyDog)
+            //             {
+            //                 Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristics);
+            //             }
+
+            //             Console.WriteLine("\n\rPress the Enter key to continue");
             //             readResult = Console.ReadLine();
+
             //             break;
 
             //         default:
             //             break;
             //     }
+            // } 
+            // while (menuSelection != "exit");
 
-            // } while (menuSelection != "exit");
 
             // SayHello();
 
@@ -3234,8 +3292,231 @@ namespace Start__up
             //     return "You lose!";
             // }
 
+            // using System;
 
+            // string[] pettingZoo = 
+            // {
+            //     "alpacas", "capybaras", "chickens", "ducks", "emus", "geese", 
+            //     "goats", "iguanas", "kangaroos", "lemurs", "llamas", "macaws", 
+            //     "ostriches", "pigs", "ponies", "rabbits", "sheep", "tortoises",
+            // };
 
+            // PlanSchoolVisit("School A");
+            // PlanSchoolVisit("School B", 3);
+            // PlanSchoolVisit("School C", 2);
+
+            // void PlanSchoolVisit(string schoolName, int groups = 6) 
+            // {
+            //     RandomizeAnimals(); 
+            //     string[,] group1 = AssignGroup(groups);
+            //     Console.WriteLine(schoolName);
+            //     PrintGroup(group1);
+            // }
+
+            // void RandomizeAnimals() 
+            // {
+            //     Random random = new Random();
+
+            //     for (int i = 0; i < pettingZoo.Length; i++) 
+            //     {
+            //         int r = random.Next(i, pettingZoo.Length);
+
+            //         string temp = pettingZoo[r];
+            //         pettingZoo[r] = pettingZoo[i];
+            //         pettingZoo[i] = temp;
+            //     }
+            // }
+
+            // string[,] AssignGroup(int groups = 6) 
+            // {
+            //     string[,] result = new string[groups, pettingZoo.Length/groups];
+            //     int start = 0;
+
+            //     for (int i = 0; i < groups; i++) 
+            //     {
+            //         for (int j = 0; j < result.GetLength(1); j++) 
+            //         {
+            //             result[i,j] = pettingZoo[start++];
+            //         }
+            //     }
+
+            //     return result;
+            // }
+
+            // void PrintGroup(string[,] groups) 
+            // {
+            //     for (int i = 0; i < groups.GetLength(0); i++) 
+            //     {
+            //         Console.Write($"Group {i + 1}: ");
+            //         for (int j = 0; j < groups.GetLength(1); j++) 
+            //         {
+            //             Console.Write($"{groups[i,j]}  ");
+            //         }
+            //         Console.WriteLine();
+            //     }
+            // }
+            // using System;
+
+            // Random random = new Random();
+            // Console.CursorVisible = false;
+            // int height = Console.WindowHeight - 1;
+            // int width = Console.WindowWidth - 5;
+            // bool shouldExit = false;
+
+            // // Console position of the player
+            // int playerX = 0;
+            // int playerY = 0;
+
+            // // Console position of the food
+            // int foodX = 0;
+            // int foodY = 0;
+
+            // // Available player and food strings
+            // string[] states = {"('-')", "(^-^)", "(X_X)"};
+            // string[] foods = {"@@@@@", "$$$$$", "#####"};
+
+            // // Current player string displayed in the Console
+            // string player = states[0];
+
+            // // Index of the current food
+            // int food = 0;
+
+            // InitializeGame();
+            // while (!shouldExit) 
+            // {
+            //     if (TerminalResized()) 
+            //     {
+            //         Console.Clear();
+            //         Console.Write("Console was resized. Program exiting.");
+            //         shouldExit = true;
+            //     } 
+            //     else 
+            //     {
+            //         if (PlayerIsFaster()) 
+            //         {
+            //             Move(1, false);
+            //         } 
+            //         else if (PlayerIsSick()) 
+            //         {
+            //             FreezePlayer();
+            //         } else 
+            //         {
+            //             Move(otherKeysExit: false);
+            //         }
+            //         if (GotFood())
+            //         {
+            //             ChangePlayer();
+            //             ShowFood();
+            //         }
+            //     }
+            // }
+
+            // // Returns true if the Terminal was resized 
+            // bool TerminalResized() 
+            // {
+            //     return height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5;
+            // }
+
+            // // Displays random food at a random location
+            // void ShowFood() 
+            // {
+            //     // Update food to a random index
+            //     food = random.Next(0, foods.Length);
+
+            //     // Update food position to a random location
+            //     foodX = random.Next(0, width - player.Length);
+            //     foodY = random.Next(0, height - 1);
+
+            //     // Display the food at the location
+            //     Console.SetCursorPosition(foodX, foodY);
+            //     Console.Write(foods[food]);
+            // }
+
+            // // Returns true if the player location matches the food location
+            // bool GotFood() 
+            // {
+            //     return playerY == foodY && playerX == foodX;
+            // }
+
+            // // Returns true if the player appearance represents a sick state
+            // bool PlayerIsSick() 
+            // {
+            //     return player.Equals(states[2]);
+            // }
+
+            // // Returns true if the player appearance represents a fast state
+            // bool PlayerIsFaster() 
+            // {
+            //     return player.Equals(states[1]);
+            // }
+
+            // // Changes the player to match the food consumed
+            // void ChangePlayer() 
+            // {
+            //     player = states[food];
+            //     Console.SetCursorPosition(playerX, playerY);
+            //     Console.Write(player);
+            // }
+
+            // // Temporarily stops the player from moving
+            // void FreezePlayer() 
+            // {
+            //     System.Threading.Thread.Sleep(1000);
+            //     player = states[0];
+            // }
+
+            // // Reads directional input from the Console and moves the player
+            // void Move(int speed = 1, bool otherKeysExit = false) 
+            // {
+            //     int lastX = playerX;
+            //     int lastY = playerY;
+
+            //     switch (Console.ReadKey(true).Key) {
+            //         case ConsoleKey.UpArrow:
+            //             playerY--; 
+            //             break;
+            //         case ConsoleKey.DownArrow: 
+            //             playerY++; 
+            //             break;
+            //         case ConsoleKey.LeftArrow:  
+            //             playerX -= speed; 
+            //             break;
+            //         case ConsoleKey.RightArrow: 
+            //             playerX += speed; 
+            //             break;
+            //         case ConsoleKey.Escape:     
+            //             shouldExit = true; 
+            //             break;
+            //         default:
+            //             // Exit if any other keys are pressed
+            //             shouldExit = otherKeysExit;
+            //             break;
+            //     }
+
+            //     // Clear the characters at the previous position
+            //     Console.SetCursorPosition(lastX, lastY);
+            //     for (int i = 0; i < player.Length; i++) 
+            //     {
+            //         Console.Write(" ");
+            //     }
+
+            //     // Keep player position within the bounds of the Terminal window
+            //     playerX = (playerX < 0) ? 0 : (playerX >= width ? width : playerX);
+            //     playerY = (playerY < 0) ? 0 : (playerY >= height ? height : playerY);
+
+            //     // Draw the player at the new location
+            //     Console.SetCursorPosition(playerX, playerY);
+            //     Console.Write(player);
+            // }
+
+            // // Clears the console, displays the food and player
+            // void InitializeGame() 
+            // {
+            //     Console.Clear();
+            //     ShowFood();
+            //     Console.SetCursorPosition(0, 0);
+            //     Console.Write(player);
+            // }
         }
     }
 }
